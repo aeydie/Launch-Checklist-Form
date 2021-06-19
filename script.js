@@ -34,10 +34,16 @@
       let faultyItemsStatus = document.getElementById("faultyItems");
       let newlaunchStatus = document.getElementById("launchStatus");
 
-      if (!isNaN(pilotNameInput) || !isNaN(copilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
-         alert("\nMake sure to enter valid information for each field!");
-         } else if (pilotNameInput.value ===  "" || copilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
-         alert("\nAll fields are required!");
+      // if (!isNaN(pilotNameInput) || !isNaN(copilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
+      //    alert("\nMake sure to enter valid information for each field!");
+      //    } else if (pilotNameInput.value ===  "" || copilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
+      //    alert("\nAll fields are required!");
+      //    }
+
+         if (pilotNameInput.value ===  "" || copilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
+            alert("\nAll fields are required!"); 
+         } else if (!isNaN(pilotNameInput) || !isNaN(copilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
+            alert("\nMake sure to enter valid information for each field!");
          }
 
          if (fuelStatusInput.value < 10000) {
