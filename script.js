@@ -50,6 +50,7 @@
             faultyItemsStatus.style.visibility = "Visible";
             pilotStatusInput.innerHTML = `${pilotNameInput.value} is ready for launch`;
             copilotStatusInput.innerHTML =`${copilotNameInput.value} is ready for launch`;
+            fuelStatusInput.innerHTML = "Fuel level too low for launch";
             newlaunchStatus.innerHTML = "Shuttle not ready for launch!";
             newlaunchStatus.style.color = "red";
          } else {
