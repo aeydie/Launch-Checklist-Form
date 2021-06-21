@@ -42,7 +42,7 @@
 
          if (pilotNameInput.value ===  "" || copilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
             alert("\nAll fields are required!"); 
-         } else if (!isNaN(pilotNameInput === false) || !isNaN(copilotNameInput.value === false) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
+         } else if (!isNaN(pilotNameInput.value) || !isNaN(copilotNameInput.value) || isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)) {
             alert("\nMake sure to enter valid information for each field!");
          }
 
