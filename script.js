@@ -19,11 +19,12 @@
       });
    });
 
-   init();
+  
    
       let form = document.querySelector("form");
       form.addEventListener("submit", function(event) {
       event.preventDefault();
+      
 
       let pilotNameInput = document.querySelector("input[name=pilotName]");
       let copilotNameInput = document.querySelector("input[name=copilotName]");
@@ -44,6 +45,20 @@
          }
 
             function init() {
+               
+            if (fuelLevelInput.value > 10000 || cargoMassInput.value < 10000) {
+               pilotStatusInput.innerHTML = `${pilotNameInput.value} is ready for launch`;
+               copilotStatusInput.innerHTML =`${copilotNameInput.value} is ready for launch`;
+               faultyItemsStatus.style.visibility = "Visible";
+               pilotStatusInput.innerHTML = `${pilotNameInput.value} is ready for launch`;
+               copilotStatusInput.innerHTML =`${copilotNameInput.value} is ready for launch`;
+               newlaunchStatus.style.color = "green";
+               newlaunchStatus.innerHTML = "Shuttle ready to launch";
+               fuelStatusInput.innerHTML = "Fuel level high enough for launch";
+               cargoStatusInput.innerHTML = "Cargo mass low enough for launch";
+               console.log("first if statement");
+               }
+               
             if (fuelLevelInput.value < 10000) {
             newlaunchStatus.style.color = "red";
             faultyItemsStatus.style.visibility = "Visible";
@@ -51,6 +66,7 @@
             copilotStatusInput.innerHTML =`${copilotNameInput.value} is ready for launch`;
             fuelStatusInput.innerHTML = "Fuel level too low for launch";
             newlaunchStatus.innerHTML = "Shuttle not ready for launch!";
+            console.log("second if statement");
             }
             if (cargoMassInput.value > 10000) {
                newlaunchStatus.style.color = "red";
@@ -59,17 +75,11 @@
                copilotStatusInput.innerHTML =`${copilotNameInput.value} is ready for launch`;
                cargoStatusInput.innerHTML = "There is too much cargo for the shuttle to take off";
                newlaunchStatus.innerHTML = "Shuttle not ready for launch!";
+               console.log("third if statement");
             }
-            if (fuelLevelInput.value > 100000 || cargoStatusInput.value < 10000) {
-               pilotStatusInput.innerHTML = `${pilotNameInput.value} is ready for launch`;
-               copilotStatusInput.innerHTML =`${copilotNameInput.value} is ready for launch`;
-               faultyItemsStatus.style.visibility = "Visible";
-               pilotStatusInput.innerHTML = `${pilotNameInput.value} is ready for launch`;
-               copilotStatusInput.innerHTML =`${copilotNameInput.value} is ready for launch`;
-               newlaunchStatus.style.color = "green";
-               newlaunchStatus.innerHTML = "Shuttle ready to launch";
-               }
+           
             }
+            init();
          });  
       });
 
